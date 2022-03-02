@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+	<main>
+		<!-- nav -->
+		<div class="navbar">
+			<nav class="flex flex-row justify-between align-center">
+				<section class="hamburger-logo-group flex justify-center align-center">
+					<div id="hamburger" class="flex flex-col justify-center align-center cursor-pointer">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<!-- <img class="menu-icon" src="images/icon-menu.svg" alt="menu icon"> -->
+					<img class="logo" src="images/logo.svg" alt="logo">
+					<div class="drop-menu hidden">
+						<ul class="menu flex flex-col">
+							<img id="close_btn" class="cursor-pointer" src="./images/icon-close.svg" alt="icon-close">
+							<li><a class="text-Dark-grayish-blue" href="#">Collections</a></li>
+							<li><a class="text-Dark-grayish-blue" href="#">Men</a></li>
+							<li><a class="text-Dark-grayish-blue" href="#">Women</a></li>
+							<li><a class="text-Dark-grayish-blue" href="#">About</a></li>
+							<li><a class="text-Dark-grayish-blue" href="#">Contact</a></li>
+						</ul>
+					</div>
+				</section>
+				
+				<section class="cart-avatar-group flex flex-row justify-between align-center ">
+					<div class="btn_cart cursor-pointer">
+						<img class="cart-icon" src="images/icon-cart.svg" alt="cart icon">
+						<div class="cart_count hidden font-bold"></div>
+					</div>
+					<img class="avatar cursor-pointer" src="images/image-avatar.png" alt="image avatar">
+				</section>
+				<div class="cart-block hidden">
+					<div class="cart-title font-bold">Cart</div>
+					<div class="ul"></div>
+					<!-- <div class="products-in-cart">
+						<div class="item flex justify-between align-center">
+							<img class="item-img" src="./images/image-product-1-thumbnail.jpg" alt="image-product-1">
+							<div class="details text-Dark-grayish-blue">
+								<div class="product-name">Autumn Limited Edition...</div>
+								<div class="price-group flex">
+									<div class="item-price">$125.00</div> x
+									<div class="count">3</div>
+									<div class="total_cost text-vark-blue font-bold">$375.00</div>
+								</div>
+							</div>
+							<img id="delete-icon" class="cursor-pointer" src="./images/icon-delete.svg" alt="icon-delete">
+						</div>
+					</div> -->
+					<div class="msg-empty text-Dark-grayish-blue font-bold">Your cart is empty</div>
+					<button class="checkout hidden font-bold flex justify-center">Checkout</button>
+				</div>
+			</nav>
+			
+		</div>
+		<div class="content">
+			<section class="lightbox">
+				<img src="images/image-product-1.jpg" alt="image-product-1" class="product-img">
+				<div class="selector flex justify-between align-center">
+					<div class="previous arrow flex align-center justify-center cursor-pointer">
+						<img id="previous" src="images/icon-previous.svg" alt="icon previous" class="button">
+					</div>
+					<div class="next arrow flex align-center justify-center cursor-pointer">
+						<img id="next" class="button" src="images/icon-next.svg" alt="icon next">
+					</div>
+				</div>
+				<div class="products-preview flex justify-between align-center">
+					<div class="product image-product-1">
+						<img class="product-active pic cursor-pointer" src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
+					</div>
+					<div class="product image-product-2">
+						<img class="cursor-pointer pic" src="./images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail">
+					</div>
+					<div class="product image-product-3">
+						<img class="cursor-pointer pic" src="./images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail">
+					</div>
+					<div class="product image-product-4">
+						<img class="cursor-pointer pic" src="./images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail">
+					</div>
+				</div>
+			</section>
+			<section class="product-content">
+				<div>
+					<p class="company-name text-orange opacity-90 font-bold uppercase mb-2">Sneaker Company</p>
+					<h1 class="title text-2xl text-vark-blue m-0">Fall Limited Edition Sneakers</h1>
+				</div>
+				<p class="text-Dark-grayish-blue">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+				durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+				<div class="price flex justify-between align-center ">
+					<section class="flex justify-between align-center">
+						<h1>$125.00</h1>
+						<button class="font-bold" id="discount">50%</button>
+					</section>
+					<section>
+						<p class="old-price font-bold text-Dark-grayish-blue"><s>$250.00</s></p>
+					</section>
+				</div>
+				
+				<div class="">
+					<div class="operations flex justify-between align-center">
+						<img class="cursor-pointer" src="images/icon-minus.svg" alt="icon minus" id="minus">
+							<b id="number_of_item">1</b>
+						<img class="cursor-pointer" src="images/icon-plus.svg" alt="icon plus" id="plus">
+					</div>
+					<button class="add-to-cart flex justify-center align-center">
+						<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg>
+						<b>Add to cart</b>
+					</button>
+					<div class="item-add-success hidden">Added to Cart successfully</div>
+				</div>
+			</section>
+	
+		</div>
+		<!-- <div class="mobile"> 
+			<ul>
+				<a href="#">
+					<img id="close_btn" src="./images/icon-close.svg" alt="">
+				</a>
+				<li><a class="font-bold text-vark-blue" href="#">Collections</a></li>
+				<li><a class="font-bold text-vark-blue" href="#">Men</a></li>
+				<li><a class="font-bold text-vark-blue" href="#">Women</a></li>
+				<li><a class="font-bold text-vark-blue" href="#">About</a></li>
+				<li><a class="font-bold text-vark-blue" href="#">Contact</a></li>
+			</ul>
+		</div> -->
+
+				
+		
+		<div class="attribution text-Dark-grayish-blue ">
+			Challenge by &nbsp;<a class="font-bold text-vark-blue " href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+			Coded by &nbsp;<a class="font-bold text-vark-blue" href="#">CodexJay</a>.
+		</div>
+		
+		<div class="overlay hidden flex flex-col align-center justify-center">
+			<div class="btnClose">
+				<img class="cursor-pointer" src="./images/icon-close.svg" alt="lightbox icon-close">
+			</div>
+		</div>
+    </main>
+
+	<script src="./index.js"></script>
+</body>
+</html>
