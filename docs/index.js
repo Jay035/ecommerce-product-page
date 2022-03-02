@@ -302,8 +302,12 @@ function onHeroImgClick(){
             lightbox_hero = overlay.querySelector(".product-img");
             lightbox_gallery.forEach( img => {
                 img.addEventListener("click", onThumbClickLightbox);
-            })
-            console.log(lightbox_gallery);
+            });
+
+            const overlayPreviousBtn = overlay.querySelector(".previous");
+            const overlayNextBtn = overlay.querySelector(".next");
+            overlayNextBtn.addEventListener("click", overlayNextBtnClick);
+            overlayPreviousBtn.addEventListener("click", overlayPreviousBtnClick);
         }
         overlay.classList.remove("hidden");     
     }
@@ -328,6 +332,40 @@ function onCheckoutClick(e){
     productsInCart = 0;
     updateCart();
 }
+
+function overlayPreviousBtnClick(){
+    let imageIndex = getCurrentOverlayIndex();
+    imageIndex--;
+    if(imageIndex < 1){
+        imageIndex = 4;
+    }
+    setOverlayHeroImage(imageIndex);
+}
+
+function overlayNextBtnClick(){
+    let imageIndex = getCurrentOverlayIndex();
+    imageIndex++;
+    if(imageIndex > 4){
+        imageIndex = 1;
+    }
+    setOverlayHeroImage(imageIndex);
+}
+
+function getCurrentOverlayIndex(){
+    const imageIndex = parseInt(lightbox_hero.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''));
+    return imageIndex ;
+}
+
+function setOverlayHeroImage(imageIndex){
+    lightbox_hero.src = `./images/image-product-${imageIndex}.jpg`;
+    // sync the  images
+    lightbox_gallery.forEach(img => {
+        img.classList.remove("product-active");
+    });
+    // set active thumbnail
+    lightbox_gallery[imageIndex - 1].classList.add("product-active");
+}
+
 
 
 // function updateCartCount(item){
