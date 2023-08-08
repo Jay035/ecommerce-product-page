@@ -1,5 +1,5 @@
 # Frontend Mentor - E-commerce product page
-https://jay035.github.io/ecommerce-product-page/
+https://ecommerce-product-page-one-black.vercel.app/
 
 ![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
 
